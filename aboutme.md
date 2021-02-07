@@ -5,16 +5,19 @@ subtitle: Why you'd want to go on a date with me
 ---
 
 My name is Luiz Felipe Maciel Correia, I have 24, i'm living in Manaus Brazil.
+    
     ### Work Experiences
 
     - Computer Vision Developer at MoPA Embedded Systems, 2019
     - Software Developer at SIDIA/SAMSUNG P&D 
 
     ### Education
+
     - Cience & Technology Bachelor (UFRN)
     - Computer Engineer Bachelor (UFRN) (In progress)
 
     ### Interest Area
+
     - Computer Vision
     - Embedded Systems
     - Embedded Android
@@ -22,11 +25,13 @@ My name is Luiz Felipe Maciel Correia, I have 24, i'm living in Manaus Brazil.
     - Neural Networks
 
     ### Programming Languages
+
     - C
     - C++
     - Python
-    
+
     ### Frameworks, libraries and Tools
+    
     - OpenCV (C++/Python)
     - GNU Make
     - CMake
