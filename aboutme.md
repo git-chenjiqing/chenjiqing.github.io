@@ -43,7 +43,7 @@ My name is Luiz Felipe Maciel Correia, I have 24, i'm living in Manaus Brazil.
     
 ### My story
 
-    I started my jouney in the  Universidade Federal do Rio Grande do Norte (UFRN), where i learned
+I started my jouney in the  Universidade Federal do Rio Grande do Norte (UFRN), where i learned
 
 to code, programming logic, data struture, algorithms and other stuffs, in 2017 i become
 
@@ -55,7 +55,7 @@ i publish my first paper and i learn a lot about image process and computer visi
 
 CMake, GNU Make and others technologies that i use until in nowadays.
 
-    In 2019 i join into the MoPA Embedded Systems to develop computer vision applications focused in embedded systems like
+In 2019 i join into the MoPA Embedded Systems to develop computer vision applications focused in embedded systems like
 
 Raspberry Pi, there i created various prototypes and learn a lot about embedded systems, after one year in MoPA i was invited
 
