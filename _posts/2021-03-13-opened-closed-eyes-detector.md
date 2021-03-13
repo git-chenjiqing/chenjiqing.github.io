@@ -19,7 +19,7 @@ In the classification task, commonly we use neural networks, to teach a neural n
 
 The <b>dataset</b> that we are use in this task is the <b>CEW Dataset</b>, you could download it from here [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V) this dataset is composed by faces with closed and opened eyes.
 
-![Closed Face](assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg) | ![Opened Face](assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg)
+![Closed Face](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg) | ![Opened Face](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg)
 
 ### Preprosssing images
 
