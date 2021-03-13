@@ -18,8 +18,9 @@ In the classification task, commonly we use neural networks, to teach a neural n
 
 
 The <b>dataset</b> that we are use in this task is the <b>CEW Dataset</b>, you could download it from here [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V) this dataset is composed by faces with closed and opened eyes.
-
-![Closed Face](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg) | ![Opened Face](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector_img1/2021-03-13-opened-closed-eyes-detector_img1.jpg)
+Olhos fechados            |  Olhos abertos
+:-------------------------:|:-------------------------:
+![Closed Eyes](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img1.jpg) | ![Opened Eyes](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img2.jpg)
 
 ### Preprosssing images
 
@@ -27,7 +28,7 @@ The first thing that we need to do when we are facing a classification problem i
 
 To remove this useless information from images we will use the lib <b>dlib</b> to detect landmarks from faces and crop the images on the interest region.
 
-![Landmarks](/home/luiz/Projects/git/y9luiz.github.io/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img3.png)
+![Landmarks](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img3.png)
 
 * install dlib:  `pip3 install dlib`
 * install opencv: `pip3 install opencv-python`
