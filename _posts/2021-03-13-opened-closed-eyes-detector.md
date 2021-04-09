@@ -18,9 +18,9 @@ In the classification task, commonly we use neural networks, to teach a neural n
 
 
 The <b>dataset</b> that we are use in this task is the <b>CEW Dataset</b>, you could download it from here [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V) this dataset is composed by faces with closed and opened eyes.
-Olhos fechados            |  Olhos abertos
-:-------------------------:|:-------------------------:
-![Closed Eyes](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img1.jpg) | ![Opened Eyes](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img2.jpg)
+Closed  eyes    |  Opened eyes
+:------------------------------:|:-------------------------:
+![Closed Eyes](https://lh3.googleusercontent.com/kk_5Hj_uwptJa6WGNKeuJxw7-qbnn7aReMbi59iYWHwooeQQLDptdHePbPHulnNseTdyUQxgieObzvU0auZlJs-_PS3ZoGeH5iBnclqoUXIZjdAY1QL7klKasOlM6gb6AfbN_2MS=s100-p-k)     |       ![Opened Eyes](https://lh3.googleusercontent.com/iSbELyMtCInjeSTN_P4DDfHho6deaQtwNvMs_lp9FSosLzOIQNmzmA55yNV2sSymrcJV8T-8KAGbzV1bNe4CkdbMpowgkZIH7tRS2S8vIOFqJJ-2wUuADhYv9Yb5p0lyeyr_pQ1Z=s100-p-k)
 
 ### Preprosssing images
 
@@ -28,7 +28,7 @@ The first thing that we need to do when we are facing a classification problem i
 
 To remove this useless information from images we will use the lib <b>dlib</b> to detect landmarks from faces and crop the images on the interest region.
 
-![Landmarks](/assets/img/_post_images/2021-03-13-opened-closed-eyes-detector/2021-03-13-opened-closed-eyes-detector_img3.png)
+![Landmarks](https://lh3.googleusercontent.com/FeCdBHKsSeXTrT29-G3a18gsOB3hpS6NJHmTMdBAzcu2wC99vcPCJgkgOAVChr2Dk_-SznacEV8JgDzoLayZzPbMArMhoEFw0ty3pPredmOFwulzNRmI9BknsTHjY2jbbuATfFcB=w414-h315-p-k)
 
 * install dlib:  `pip3 install dlib`
 * install opencv: `pip3 install opencv-python`
