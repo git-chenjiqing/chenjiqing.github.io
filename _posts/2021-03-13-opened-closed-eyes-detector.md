@@ -2,10 +2,10 @@
 layout: post
 title: How create a eye detector using deep learning?
 subtitle: This applications determinates if your eyes are opened or closed
-cover-img: [/assets/img/path.jpg](https://github.com/y9luiz/OpenedClosedEyesDetector/raw/main/demo_closed_img.jpg)
+cover-img: /assets/img/demo_closed_img.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [deeplearning, computervision,python,code,tutorial,keras,tensorflow]
+tags: [deeplearning, computervision, python, code, tutorial, keras, tensorflow]
 ---
 
 ### Introduction
