@@ -2,7 +2,7 @@
 layout: post
 title: How create a eye detector using deep learning?
 subtitle: This applications determinates if your eyes are opened or closed
-cover-img: /assets/img/path.jpg
+cover-img: [/assets/img/path.jpg](https://github.com/y9luiz/OpenedClosedEyesDetector/raw/main/demo_closed_img.jpg)
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [deeplearning, computervision,python,code,tutorial,keras,tensorflow]
@@ -12,15 +12,14 @@ tags: [deeplearning, computervision,python,code,tutorial,keras,tensorflow]
 
 To teach something to the computer in some cases could be very difficult, image classification is a computer vision topic which become's very popular, in this topic we are interested to teach the machine to recognize objects present in a scene, here I brought an example of image classification problem, how to determine if a person is with opened or closed eyes?
 
-In the classification task, commonly we use neural networks, to teach a neural network we need to have a dataset,  in our case, our dataset is a set of images that will help us to conclude our objective, so we will show those images from the dataset to the neural network and it will return to us a model that can aswer our main question, "how to determine if a person is with opened or closed eyes".
+In the classification task, commonly we use neural networks, to teach a neural network we need to have a dataset, in our case, our dataset is a set of images that will help us to conclude our objective, so we will show those images from the dataset to the neural network and it will return to us a model that can aswer our main question, "how to determine if a person is with opened or closed eyes".
 
 ### Dataset
 
-
 The <b>dataset</b> that we are use in this task is the <b>CEW Dataset</b>, you could download it from [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V) it is composed by faces with closed and opened eyes.
-Closed  eyes    |  Opened eyes
+Closed eyes | Opened eyes
 :------------------------------:|:-------------------------:
-![Closed Eyes](https://lh3.googleusercontent.com/kk_5Hj_uwptJa6WGNKeuJxw7-qbnn7aReMbi59iYWHwooeQQLDptdHePbPHulnNseTdyUQxgieObzvU0auZlJs-_PS3ZoGeH5iBnclqoUXIZjdAY1QL7klKasOlM6gb6AfbN_2MS=s100-p-k)     |       ![Opened Eyes](https://lh3.googleusercontent.com/iSbELyMtCInjeSTN_P4DDfHho6deaQtwNvMs_lp9FSosLzOIQNmzmA55yNV2sSymrcJV8T-8KAGbzV1bNe4CkdbMpowgkZIH7tRS2S8vIOFqJJ-2wUuADhYv9Yb5p0lyeyr_pQ1Z=s100-p-k)
+![Closed Eyes](https://lh3.googleusercontent.com/kk_5Hj_uwptJa6WGNKeuJxw7-qbnn7aReMbi59iYWHwooeQQLDptdHePbPHulnNseTdyUQxgieObzvU0auZlJs-_PS3ZoGeH5iBnclqoUXIZjdAY1QL7klKasOlM6gb6AfbN_2MS=s100-p-k) | ![Opened Eyes](https://lh3.googleusercontent.com/iSbELyMtCInjeSTN_P4DDfHho6deaQtwNvMs_lp9FSosLzOIQNmzmA55yNV2sSymrcJV8T-8KAGbzV1bNe4CkdbMpowgkZIH7tRS2S8vIOFqJJ-2wUuADhYv9Yb5p0lyeyr_pQ1Z=s100-p-k)
 
 ### Preprosssing images
 
@@ -30,26 +29,21 @@ To remove the useless information from images we will do a preprocess steop usin
 
 ![Landmarks](https://lh3.googleusercontent.com/FeCdBHKsSeXTrT29-G3a18gsOB3hpS6NJHmTMdBAzcu2wC99vcPCJgkgOAVChr2Dk_-SznacEV8JgDzoLayZzPbMArMhoEFw0ty3pPredmOFwulzNRmI9BknsTHjY2jbbuATfFcB=w414-h315-p-k)
 
-
 ### Coding our preprocess program
-
 
 Create a folder to our project and inside it create a file with any name you want, in my case i will use `preprocess.py`
 
-
-If you already didn't download the CEW Dataset  [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V)
+If you already didn't download the CEW Dataset [here](https://drive.google.com/uc?id=1niyedvpnATsWMnhcy_DfNNhPGc2J_G8V)
 
 Also download the landmark detector model of dlib [here](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2), i will store it in an folder called models.
-
 
 Lets get the user input from terminal to know the dataset path.
 
 ### Dependencies
 
-* install dlib:  `pip3 install dlib`
-* install opencv: `pip3 install opencv-python`
-* install imutils: `pip3 install imutils`
-
+- install dlib: `pip3 install dlib`
+- install opencv: `pip3 install opencv-python`
+- install imutils: `pip3 install imutils`
 
 ```python
 import dlib
@@ -76,9 +70,8 @@ if __name__ == "__main__":
         splitted_path = path.split()
         labels_list.append(splitted_path[-2])
         image_name_list.append(splitted_path[-1]):
-    
-```
 
+```
 
 ### Training our net
 
@@ -86,20 +79,20 @@ After preprocess we need to train our network, to do it we will use the TensorFl
 
 For training we will use a few techniques that will make our network "smarter", the techniques are:
 
-* <b> Data augmentation </b>
+- <b> Data augmentation </b>
 
-    To make our network more precise we need to have lots of data, data augmentation is responsible to generate data using pre existing data, how it is possible? apply transformation such as rotations, flip and others in the image set, it also makes our dataset "more" pose invariant.
+  To make our network more precise we need to have lots of data, data augmentation is responsible to generate data using pre existing data, how it is possible? apply transformation such as rotations, flip and others in the image set, it also makes our dataset "more" pose invariant.
 
-* <b>Transfer learning</b>
+- <b>Transfer learning</b>
 
-    We choose a pre-trained model to transfer its "abilities" to our network, which "ability" we are interested in? the object detection, so our network at first knows to identify objects but not eyes, for this reason, we will train for eyes.
+  We choose a pre-trained model to transfer its "abilities" to our network, which "ability" we are interested in? the object detection, so our network at first knows to identify objects but not eyes, for this reason, we will train for eyes.
 
-* <b>Fine tuning</b>
+- <b>Fine tuning</b>
 
-    In the object classification the last layers of the neural network are responsible to return the answer about which object is present in the image, this task is also called prediction, to perform the prediction we also could train more layers than just the last layers, we could to train the hidden layers, this is known by fine-tuning.
+  In the object classification the last layers of the neural network are responsible to return the answer about which object is present in the image, this task is also called prediction, to perform the prediction we also could train more layers than just the last layers, we could to train the hidden layers, this is known by fine-tuning.
 
 ```python
-from tensorflow.keras.preprocessing.image import ImageDataGenerator                                                                                                                             
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.layers import AveragePooling2D,MaxPool2D, Conv2D
 from tensorflow.keras.layers import Dropout
@@ -119,7 +112,7 @@ from imutils import paths
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 def loadDataset(input_path):
     imagePaths = list(paths.list_images(input_path))
@@ -149,7 +142,7 @@ if __name__=="__main__":
     labels = lb.fit_transform(labels)
     labels = to_categorical(labels)
     # "split" the dataset into 2 sets, one is the test set
-    # and the other the train set, the test set have 20% of 
+    # and the other the train set, the test set have 20% of
     # the total images and the train have the rest
     (trainX, testX, trainY, testY) = train_test_split(data, labels,
         test_size=0.20, stratify=labels, random_state=42)
@@ -197,9 +190,9 @@ if __name__=="__main__":
     print("Train started")
     H = model.fit(
         aug.flow(trainX, trainY, batch_size=BS),
-        steps_per_epoch=len(trainX) // BS, 
+        steps_per_epoch=len(trainX) // BS,
         validation_data=(testX, testY),
-        validation_steps=len(testX) // BS, 
+        validation_steps=len(testX) // BS,
         epochs=EPOCHS)
     # evaluate our test
     predIdxs = model.predict(testX, batch_size=BS)
@@ -219,7 +212,7 @@ if __name__=="__main__":
     plt.plot( H.history["loss"], label="train_loss")
     print(H.history.keys())
     for key in H.history.keys():
-        print(f'key:{key} {H.history[key]}')    
+        print(f'key:{key} {H.history[key]}')
     plt.plot( H.history["val_loss"], label="val_loss")
     plt.plot(H.history["accuracy"], label="train_acc")
     plt.plot(H.history["val_accuracy"], label="val_acc")
@@ -227,20 +220,20 @@ if __name__=="__main__":
     plt.xlabel("Epoch #")
     plt.ylabel("Loss/Accuracy")
     plt.legend(loc="lower left")
-    plt.savefig("plot_novo")     
+    plt.savefig("plot_novo")
 
 ```
 
 ### Dependencies
 
-* Download the face detection model [here](https://github.com/gopinath-balu/computer_vision/blob/master/CAFFE_DNN/res10_300x300_ssd_iter_140000.caffemodel)
+- Download the face detection model [here](https://github.com/gopinath-balu/computer_vision/blob/master/CAFFE_DNN/res10_300x300_ssd_iter_140000.caffemodel)
 
-* Download the face detection proto txt file [here](https://github.com/gopinath-balu/computer_vision/blob/master/CAFFE_DNN/deploy.prototxt.txt)
+- Download the face detection proto txt file [here](https://github.com/gopinath-balu/computer_vision/blob/master/CAFFE_DNN/deploy.prototxt.txt)
 
 ### Using our model
 
 ```python
-import cv2                                                                                                                                                                                      
+import cv2
 from cv2 import dnn
 import numpy as np
 import time
@@ -263,7 +256,7 @@ def getBoudingboxFromLandmarksList(landmaks_list):
         if landmark[0] > bouding_box[1][0]:
             bouding_box[1][0] = landmark[0]
         if landmark[1] > bouding_box[1][1]:
-            bouding_box[1][1] = landmark[1] 
+            bouding_box[1][1] = landmark[1]
     return bouding_box
 if __name__ == "__main__":
     # open the camera
@@ -271,7 +264,7 @@ if __name__ == "__main__":
     # load the face detection model
     net = cv2.dnn.readNetFromCaffe("deploy.prototxt.txt", "res10_300x300_ssd_iter_140000.caffemodel")
     face_landmark_predictor = FaceLandmarkPredictor()
-    range_idxs = [] 
+    range_idxs = []
     range_idxs.append(face_utils.FACIAL_LANDMARKS_68_IDXS["left_eye"])
     range_idxs.append(face_utils.FACIAL_LANDMARKS_68_IDXS["right_eye"])
     range_idxs.append(face_utils.FACIAL_LANDMARKS_68_IDXS["right_eyebrow"])
@@ -291,7 +284,7 @@ if __name__ == "__main__":
         # detect faces on the image
         for box in face_detector.detectFaces(img):
             # detect landmarks at the faces
-            landmark_list = face_landmark_predictor.predictLandmarks(img_gray,box) 
+            landmark_list = face_landmark_predictor.predictLandmarks(img_gray,box)
 
             # get the Region of interest of the face
             isInRange = lambda idx, idx_range :  True if idx>=idx_range[0] and idx<=idx_range[1] else False
@@ -300,7 +293,7 @@ if __name__ == "__main__":
             for i in range(48):
                 for range_idx in range_idxs:
                     if isInRange(i, range_idx) or i == 30:
-                        good_landmarks_list.append(list(landmark_list[i]))  
+                        good_landmarks_list.append(list(landmark_list[i]))
                         #cv2.circle(show_img,landmark_list[i],1,(255,0,0))
             bb = getBoudingboxFromLandmarksList(good_landmarks_list)
 
@@ -329,14 +322,14 @@ if __name__ == "__main__":
             color = (0,0,255)
 
             # show the information to the user
-            
+
             if opened > closed:
                 label = f'Opened: {round(opened*100,2)}%'
                 score = opened
                 color = (0,255,0)
             if score>0.9:
-                cv2.putText(show_img,label,(int(box[0]),box[3]+10),cv2.FONT_HERSHEY_PLAIN,1,color,2)     
-                print(label) 
+                cv2.putText(show_img,label,(int(box[0]),box[3]+10),cv2.FONT_HERSHEY_PLAIN,1,color,2)
+                print(label)
                 cv2.rectangle(show_img,(pt1),(pt2),color)
 
         cv2.imshow("img",show_img)
